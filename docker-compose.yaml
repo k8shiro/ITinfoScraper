@@ -1,0 +1,12 @@
+version: '3'
+services:
+  web:
+    build: scraping_server/.
+    ports:
+      - 8000:8000
+    volumes:
+      -  ./scraping_server/:/scraping_server
+  mongo:
+    image: mongo
+    volumes:
+      - ./mongo/data/db:/data/db
