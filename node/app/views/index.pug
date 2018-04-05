@@ -1,0 +1,92 @@
+doctype html
+html(lang='en')
+  head
+    title ITinfoScraper API
+    script(src='/bulma-extensions/bulma-accordion/dist/bulma-accordion.js')
+    link(rel='stylesheet', type='text/css', href='/bulma/css/bulma.css')
+    link(rel='stylesheet', type='text/css', href='/bulma-extensions/bulma-accordion/dist/bulma-accordion.min.css')
+  body
+    header
+      .hero.is-info.is-bold
+        .hero-body
+          .container
+            h1.title ITinfoScraper API
+            h2.subtitle api test page
+    section.accordions
+      article.accordion
+        .accordion-header
+          p [GET] /api/page
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='GET', action='/api/page')
+              input.button.is-primary.is-large(type='submit', value='[GET] /api/page')
+      article.accordion
+        .accordion-header
+          p [POST] /api/page
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='POST', action='/api/page')
+              .field
+                label.label Title
+                .control
+                  input.input(type='text', name='title')
+                label.label URL
+                .control
+                  input.input(type='text', name='url')
+                label.label Site
+                .control
+                  input.input(type='text', name='site')
+                label.label Type
+                .control
+                  .select(name='type')
+                    select
+                      option media
+                      option sns
+              input.button.is-primary.is-large(type='submit', value='[POST] /api/page')
+      article.accordion
+        .accordion-header
+          p [GET] /api/page/new
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='GET', action='/api/page/new')
+              input.button.is-primary.is-large(type='submit', value='[GET] /api/page/new')
+      article.accordion
+        .accordion-header
+          p [POST] /api/page/new
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='POST', action='/api/page/new')
+              input.button.is-primary.is-large(type='submit', value='[POST] /api/page/new')
+      article.accordion
+        .accordion-header
+          p [GET] /api/tag
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='GET', action='/api/tag')
+              input.button.is-primary.is-large(type='submit', value='[GET] /api/tag')
+      article.accordion
+        .accordion-header
+          p [POST] /api/tag
+          button.toggle(aria-label='toggle')
+        .accordion-body
+          .accordion-content
+            form(method='POST', action='/api/tag')
+              .field
+                label.label Name
+                .control
+                  input.input(type='text', name='name')
+                label.label Description
+                .control
+                  input.input(type='text', name='description')
+              input.button.is-primary.is-large(type='submit', value='[POST] /api/tag')
+    article.message.is-info
+      .message-header
+        p Info
+      .message-body
+        | #{data}
+

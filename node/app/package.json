@@ -1,0 +1,12 @@
+{
+  "name": "ITinfoScraperUI",
+  "version": "0.0.0",
+  "description": "",
+  "dependencies": {
+    "express": "*",
+    "pug": "*",
+    "sync-request": "*",
+    "bulma": "*",
+    "bulma-extensions": "*"
+  }
+}

@@ -53,8 +53,6 @@
 
             Accept: application/json
 
-    + Attribute (Page)
-
 + Response 201 (application/json)
 
     + Attribute (array[Page])
@@ -69,8 +67,8 @@
 + _id: 5ac1971c5294ca0025ad0f35 (string) - ページID 
 + title: テスト (string) - ページタイトル
 + type: media (string) - ページタイプ
-+ page: http://test.com/page - ページURL
-+ site: Webニュース - 掲載サイト名
++ url: http://test.com/page (string) - ページURL
++ site: Webニュース (string) - 掲載サイト名
 + keyword (array[stringt])
     + tset1
     + test2

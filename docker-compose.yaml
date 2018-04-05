@@ -1,11 +1,25 @@
 version: '3'
 services:
-  web:
+  node:
+    build: node/.    
+    working_dir: /node/app
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node/:/node/
+      - /node/app/node_modules
+    ports:
+      - 8081:8081
+    links:
+      - api
+  api:
     build: scraping_server/.
     ports:
       - 8000:8000
     volumes:
       -  ./scraping_server/:/scraping_server
+    links:
+      - mongo
   mongo:
     image: mongo
     volumes:

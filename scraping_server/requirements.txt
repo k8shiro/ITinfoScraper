@@ -1,0 +1,8 @@
+cython
+falcon
+gunicorn
+pymongo
+beautifulsoup4
+lxml
+requests
+
