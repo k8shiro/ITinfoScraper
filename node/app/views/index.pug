@@ -33,9 +33,12 @@ html(lang='en')
                 label.label Type完全一致)
                 .control
                   input.input(type='text', name='type')
-                label.label Tag(完全一致、and検索)
+                label.label TagAnd(完全一致、and検索)
                 .control
-                  input.input(type='text', name='tag')
+                  input.input(type='text', name='tag_and')
+                label.label TagOr(完全一致、or検索)
+                .control
+                  input.input(type='text', name='tag_or')
               input.button.is-primary.is-large(type='submit', value='[GET] /api/page')
       article.accordion
         .accordion-header

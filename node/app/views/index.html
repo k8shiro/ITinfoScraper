@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>ITinfoScraper API</title>
+    <script src="/bulma-extensions/bulma-accordion/dist/bulma-accordion.js"></script>
+    <link rel="stylesheet" type="text/css" href="/bulma/css/bulma.css">
+    <link rel="stylesheet" type="text/css" href="/bulma-extensions/bulma-accordion/dist/bulma-accordion.min.css">
+  </head>
+  <body>
+    <header>
+      <div class="hero is-info is-bold">
+        <div class="hero-body">
+          <div class="container">
+            <h1 class="title">ITinfoScraper API</h1>
+            <h2 class="subtitle">api test page</h2>
+          </div>
+        </div>
+      </div>
+    </header>
+    <section class="accordions">
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[GET] /api/page</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="GET" action="/api/page">
+              <div class="field">
+                <label class="label">Title(部分一致)</label>
+                <div class="control">
+                  <input class="input" type="text" name="title">
+                </div>
+                <label class="label">URL(部分一致)</label>
+                <div class="control">
+                  <input class="input" type="text" name="url">
+                </div>
+                <label class="label">Site(完全一致)</label>
+                <div class="control">
+                  <input class="input" type="text" name="site">
+                </div>
+                <label class="label">Type完全一致)</label>
+                <div class="control">
+                  <input class="input" type="text" name="type">
+                </div>
+                <label class="label">TagAnd(完全一致、and検索)</label>
+                <div class="control">
+                  <input class="input" type="text" name="tag_and">
+                </div>
+		<label class="label">TagOr(完全一致、or検索)</label>
+                <div class="control">
+                  <input class="input" type="text" name="tag_or">
+                </div>
+              </div>
+              <input class="button is-primary is-large" type="submit" value="[GET] /api/page">
+            </form>
+          </div>
+        </div>
+      </article>
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[POST] /api/page</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="POST" action="/api/page">
+              <div class="field">
+                <label class="label">Title</label>
+                <div class="control">
+                  <input class="input" type="text" name="title">
+                </div>
+                <label class="label">URL</label>
+                <div class="control">
+                  <input class="input" type="text" name="url">
+                </div>
+                <label class="label">Site</label>
+                <div class="control">
+                  <input class="input" type="text" name="site">
+                </div>
+                <label class="label">Type</label>
+                <div class="control">
+                  <div class="select" name='type'>
+                    <select>
+                      <option>media</option>
+                      <option>sns</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <input class="button is-primary is-large" type="submit" value="[POST] /api/page">
+            </form>
+          </div>
+        </div>
+      </article>
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[GET] /api/page/new</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="GET" action="/api/page/new">
+              <input class="button is-primary is-large" type="submit" value="[GET] /api/page/new">
+            </form>
+          </div>
+        </div>
+      </article>
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[POST] /api/page/new</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="POST" action="/api/page/new">
+              <input class="button is-primary is-large" type="submit" value="[POST] /api/page/new">
+            </form>
+          </div>
+        </div>
+      </article>
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[GET] /api/tag</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="GET" action="/api/tag">
+              <input class="button is-primary is-large" type="submit" value="[GET] /api/tag">
+            </form>
+          </div>
+        </div>
+      </article>
+      <article class="accordion">
+        <div class="accordion-header">
+          <p>[POST] /api/tag</p>
+          <button class="toggle" aria-label="toggle"></button>
+        </div>
+        <div class="accordion-body">
+          <div class="accordion-content">
+            <form method="POST" action="/api/tag">
+              <div class="field">
+                <label class="label">Name</label>
+                <div class="control">
+                  <input class="input" type="text" name="name">
+                </div>
+                <label class="label">Description</label>
+                <div class="control">
+                  <input class="input" type="text" name="description">
+                </div>
+              </div>
+              <input class="button is-primary is-large" type="submit" value="[POST] /api/tag">
+            </form>
+          </div>
+        </div>
+      </article>
+    </section>
+    <article class="message is-info">
+      <div class="message-header">
+        <p>Info</p>
+      </div>
+      <div class="message-body">#{data} </div>
+    </article>
+  </body>
+</html>

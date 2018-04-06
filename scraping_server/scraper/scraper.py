@@ -18,7 +18,6 @@ class Scraper:
         pass
 
 
-
     def save_page(self, page):
         page = self.add_tag_to_page(page)
         page['created_at'] = datetime.now()
@@ -56,9 +55,13 @@ class Scraper:
         if 'type' in params:
             searching_option['$and'].append({'type': params['type']})
 
-        if 'tag' in params:
-            tags = params['tag'].split(',')
+        if 'tag_and' in params:
+            tags = params['tag_and'].split(',')
             searching_option['$and'].append({'tag': {'$all': tags}})
+
+        if 'tag_or' in params:
+            tags = params['tag_or'].split(',')
+            searching_option['$and'].append({'tag': {'$in': tags}})
 
         return searching_option
 
