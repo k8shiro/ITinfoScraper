@@ -1,9 +1,10 @@
 var express = require('express');
 var request = require('sync-request');
 var app = express();
-var body_parser = require('body-parser')
+var body_parser = require('body-parser');
  
 app.use(body_parser());
+
 
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
@@ -15,8 +16,13 @@ app.get('/api', function (req, res) {
 });
 
 app.get('/api/page', function (req, res) {
+  var params = ''
+  for(key in req.query){
+    params = params + key + '=' + encodeURIComponent(req.query[key]) + '&'
+  }
+  console.log(params)
   var url = 'http://api:8000/api/page';
-  var pages = request('GET', url).getBody(); 
+  var pages = request('GET', url + '?' + params).getBody(); 
   res.render('index', { data: pages });
 });
 

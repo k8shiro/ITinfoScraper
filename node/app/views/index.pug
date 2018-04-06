@@ -20,6 +20,22 @@ html(lang='en')
         .accordion-body
           .accordion-content
             form(method='GET', action='/api/page')
+              .field
+                label.label Title(部分一致)
+                .control
+                  input.input(type='text', name='title')
+                label.label URL(部分一致)
+                .control
+                  input.input(type='text', name='url')
+                label.label Site(完全一致)
+                .control
+                  input.input(type='text', name='site')
+                label.label Type完全一致)
+                .control
+                  input.input(type='text', name='type')
+                label.label Tag(完全一致、and検索)
+                .control
+                  input.input(type='text', name='tag')
               input.button.is-primary.is-large(type='submit', value='[GET] /api/page')
       article.accordion
         .accordion-header
@@ -87,6 +103,5 @@ html(lang='en')
     article.message.is-info
       .message-header
         p Info
-      .message-body
-        | #{data}
+      .message-body #{data} 
 
