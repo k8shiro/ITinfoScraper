@@ -4,7 +4,8 @@ from pymongo import MongoClient
 from bson.objectid import ObjectId
 from datetime import datetime, timedelta
 from scraper.scraper import Scraper
-from scraper.thinkit_scraper import ThinkitScraper 
+from scraper.thinkit_scraper import ThinkitScraper
+from scraper.connpass_scraper import ConnpassScraper 
 
 class mongoEncoder(json.JSONEncoder):
     def default(self, obj):
@@ -48,6 +49,7 @@ class PageResource(Resource):
         elif route['order']  == 'new':
             pages = []
             pages.extend(ThinkitScraper().load_new_pages())
+            pages.extend(ConnpassScraper().load_new_pages())
 
             saved_pages = []
             for page in pages:

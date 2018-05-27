@@ -30,6 +30,7 @@ class Scraper:
         if result['updatedExisting']:
             return {'error': 'This page is already registered'}
         else:
+            print(page)
             return page
 
 

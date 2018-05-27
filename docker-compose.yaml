@@ -24,3 +24,29 @@ services:
     image: mongo
     volumes:
       - ./mongo/data/db:/data/db
+  mongo-express:
+    image: mongo-express
+    command: >
+      /bin/bash -c "
+        sleep 5;
+        tini -- node app;
+      "
+    environment:
+      - ME_CONFIG_OPTIONS_EDITORTHEME=ambiance
+      - ME_CONFIG_BASICAUTH_USERNAME=user
+      - ME_CONFIG_BASICAUTH_PASSWORD=password
+    ports:
+      - 8082:8081
+    links:
+      - mongo
+    depends_on:
+      - mongo
+#  rundeck:
+#    image: jordan/rundeck
+#    ports:
+#      - 4440:4440
+#    environment:
+#      - EXTERNAL_SERVER_URL=http://localhost:4440
+#    links:
+#      - api
+

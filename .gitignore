@@ -4,3 +4,4 @@ mongo/data/db/*
 !mongo/data/db/.gitkeep
 
 node/app/node_modules/
+*.ini
